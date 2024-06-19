@@ -9,6 +9,171 @@
     <link rel="stylesheet" href="./assets/css/pico.min.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/loader.css">
+    <style>
+        #toast {
+            visibility: hidden;
+            max-width: 50px;
+            height: 50px;
+            /*margin-left: -125px;*/
+            margin: auto;
+            background-color: #040b1f;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            font-size: 17px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #toast #img {
+            width: 50px;
+            height: 50px;
+
+            float: left;
+
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            box-sizing: border-box;
+
+
+            background-color: #111;
+            color: #fff;
+        }
+
+        #toast #desc {
+
+
+            color: #fff;
+
+            padding: 16px;
+
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes expand {
+            from {
+                min-width: 50px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @keyframes expand {
+            from {
+                min-width: 50px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @-webkit-keyframes stay {
+            from {
+                min-width: 350px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @keyframes stay {
+            from {
+                min-width: 350px
+            }
+
+            to {
+                min-width: 350px
+            }
+        }
+
+        @-webkit-keyframes shrink {
+            from {
+                min-width: 350px;
+            }
+
+            to {
+                min-width: 50px;
+            }
+        }
+
+        @keyframes shrink {
+            from {
+                min-width: 350px;
+            }
+
+            to {
+                min-width: 50px;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 60px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 60px;
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,10 +184,10 @@
                 <h1 class="navbar-title">Psicosis</h1>
             </li>
         </ul>
-        <ul class="menu-navbar" no-movil>
+        <ul class="menu-navbar">
             <li><a href="./index.html" class="selected">Inicio</a></li>
             <li><a href="./quienesSomos.html">Quienes somos</a></li>
-            <li><button class="secondary">Ingresar</button></li>
+            <li no-movil><button class="secondary">Ingresar</button></li>
         </ul>
     </nav>
 
@@ -142,68 +307,82 @@
         <button class="secondary">Pruébalo Gratis</button>
     </div>
 
-        <footer class="footer">
-            <p>&copy;2024 Psicosis | Todos los derechos reservados</p>
-        </footer>
+    <div id="toast">
+        <div id="desc">Bienvenido a nuestra pagina</div>
+    </div>
 
-        <div class="loader">
-            <div class="hexagon" aria-label="Animated hexagonal ripples">
-                <div class="hexagon__group">
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                </div>
-                <div class="hexagon__group">
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                </div>
-                <div class="hexagon__group">
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                </div>
-                <div class="hexagon__group">
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                </div>
-                <div class="hexagon__group">
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                </div>
-                <div class="hexagon__group">
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                    <div class="hexagon__sector"></div>
-                </div>
+    <footer class="footer">
+        <p>&copy;2024 Psicosis | Todos los derechos reservados</p>
+    </footer>
+
+    <div class="loader">
+        <div class="hexagon" aria-label="Animated hexagonal ripples">
+            <div class="hexagon__group">
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+            </div>
+            <div class="hexagon__group">
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+            </div>
+            <div class="hexagon__group">
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+            </div>
+            <div class="hexagon__group">
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+            </div>
+            <div class="hexagon__group">
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+            </div>
+            <div class="hexagon__group">
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
+                <div class="hexagon__sector"></div>
             </div>
         </div>
+    </div>
 
 </body>
 <!-- <script type="module" src="./assets/js/build-themes.js"></script> -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>
+
+    if (localStorage.getItem("visited") == null) {
+        window.location.href = "./loading.html"
+    }
+
+    function launch_toast() {
+        var x = document.getElementById("toast")
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
+    }
 
     const cargarSonido = function (fuente) {
         const sonido = document.createElement("audio")
@@ -225,14 +404,17 @@
     }
 
     window.onload = () => {
-        const audio = document.getElementById("audio")
+        const sonido = cargarSonido("./assets/audio/movie.mp3")
+        sonido.volume = 0.1
+        sonido.play()
         setTimeout(() => {
             const loader = document.querySelector(".loader")
             loader.classList.add("loader-hide")
             setTimeout(() => {
-                loader.remove()
-                const sonido = cargarSonido("./assets/audio/movie.mp3")
-                sonido.play()
+                loader.classList.add("loader-none")
+                setTimeout(() => {
+                    launch_toast()
+                }, 4000)
             }, 1000)
         }, 500)
     }

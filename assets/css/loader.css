@@ -14,6 +14,10 @@
     opacity: 0;
 }
 
+.loader-none {
+    display: none;
+}
+
 .hexagon {
     overflow: hidden;
     position: relative;

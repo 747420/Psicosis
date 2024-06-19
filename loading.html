@@ -62,82 +62,20 @@
             font-size: 16px;
             margin-bottom: 20px;
         }
+
+        .mensaje {
+            position: fixed;
+            left: 50%;
+            bottom: 10%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            width: 100%;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <ul>
-            <li>
-                <h1 class="navbar-title">Psicosis</h1>
-            </li>
-        </ul>
-        <ul class="menu-navbar">
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./quienesSomos.html" class="selected">Quienes somos</a></li>
-            <li no-movil><button class="secondary">Ingresar</button></li>
-        </ul>
-    </nav>
-
-    <main class="container">
-        <h2 class="first-container">Quienes somos</h2>
-        <div class="about-section">
-            <h2>Nuestro equipo</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. Juan Pérez</h3>
-                    <p>Psicólogo especializado en terapia cognitiva y conductual</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. María Gómez</h3>
-                    <p>Psicóloga especializada en terapia familiar y sistémica</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. Carlos Ramírez</h3>
-                    <p>Psicólogo especializado en terapia de la conducta y la cognición</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. Juan Pérez</h3>
-                    <p>Psicólogo especializado en terapia cognitiva y conductual</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. María Gómez</h3>
-                    <p>Psicóloga especializada en terapia familiar y sistémica</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. Carlos Ramírez</h3>
-                    <p>Psicólogo especializado en terapia de la conducta y la cognición</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. Juan Pérez</h3>
-                    <p>Psicólogo especializado en terapia cognitiva y conductual</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. María Gómez</h3>
-                    <p>Psicóloga especializada en terapia familiar y sistémica</p>
-                </div>
-                <div class="team-member">
-                    <img src="./assets/images/image.png" alt=" 1">
-                    <h3>Dr. Carlos Ramírez</h3>
-                    <p>Psicólogo especializado en terapia de la conducta y la cognición</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <p>&copy;2024 Psicosis | Todos los derechos reservados</p>
-    </footer>
-
     <div class="loader">
         <div class="hexagon" aria-label="Animated hexagonal ripples">
             <div class="hexagon__group">
@@ -189,6 +127,7 @@
                 <div class="hexagon__sector"></div>
             </div>
         </div>
+        <p class="mensaje">Cargando...</p>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -204,13 +143,20 @@
         };
 
         window.onload = () => {
-            setTimeout(() => {
-                const loader = document.querySelector(".loader");
-                loader.classList.add("loader-hide");
+            localStorage.setItem("visited", true)
+           const mensaje = document.querySelector('.mensaje');
+           setTimeout(() => {
+                mensaje.innerHTML = 'Preparando los componentes...';
                 setTimeout(() => {
-                    loader.classList.add("loader-none")
-                }, 1000);
-            }, 500);
+                    mensaje.innerHTML = 'Maquillando un poco el sitio...';
+                    setTimeout(() => {
+                        mensaje.innerHTML = 'Cargando resultados...';
+                        setTimeout(() => {
+                            window.location.href = "./index.html"
+                       }, 1000)
+                   }, 2000)
+               }, 2000)
+           }, 2000)
         };
 
         document.querySelector("button").onclick = () => {
