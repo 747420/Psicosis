@@ -8,6 +8,7 @@
     <title>Psicosis</title>
     <link rel="stylesheet" href="./assets/css/pico.min.css">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/loader.css">
     <style>
         .about-section {
             padding: 50px 0;
@@ -30,6 +31,13 @@
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 1em;
             justify-content: center;
+
+            @media (width < 768px) {
+                & {
+                    grid-template-columns: repeat(1, 1fr);
+                    margin: 0;
+                }
+            }
         }
 
         .about-section .team-member {
@@ -65,7 +73,7 @@
                 <h1 class="navbar-title">Psicosis</h1>
             </li>
         </ul>
-        <ul class="menu-navbar">
+        <ul class="menu-navbar" no-movil>
             <li><a href="./index.html">Inicio</a></li>
             <li><a href="./quienesSomos.html" class="selected">Quienes somos</a></li>
             <li><button class="secondary">Ingresar</button></li>
@@ -78,47 +86,47 @@
             <h2>Nuestro equipo</h2>
             <div class="team-members">
                 <div class="team-member">
-                    <img src="" alt=" 1">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. Juan Pérez</h3>
                     <p>Psicólogo especializado en terapia cognitiva y conductual</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt="2">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. María Gómez</h3>
                     <p>Psicóloga especializada en terapia familiar y sistémica</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt="3">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. Carlos Ramírez</h3>
                     <p>Psicólogo especializado en terapia de la conducta y la cognición</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt=" 1">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. Juan Pérez</h3>
                     <p>Psicólogo especializado en terapia cognitiva y conductual</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt="2">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. María Gómez</h3>
                     <p>Psicóloga especializada en terapia familiar y sistémica</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt="3">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. Carlos Ramírez</h3>
                     <p>Psicólogo especializado en terapia de la conducta y la cognición</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt=" 1">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. Juan Pérez</h3>
                     <p>Psicólogo especializado en terapia cognitiva y conductual</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt="2">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. María Gómez</h3>
                     <p>Psicóloga especializada en terapia familiar y sistémica</p>
                 </div>
                 <div class="team-member">
-                    <img src="" alt="3">
+                    <img src="./assets/images/image.png" alt=" 1">
                     <h3>Dr. Carlos Ramírez</h3>
                     <p>Psicólogo especializado en terapia de la conducta y la cognición</p>
                 </div>

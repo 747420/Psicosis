@@ -8,6 +8,7 @@
     <title>Psicosis</title>
     <link rel="stylesheet" href="./assets/css/pico.min.css">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/loader.css">
     <style>
         body {
             background-color: #F1EDE4;
@@ -21,6 +22,12 @@
         body img {
             max-width: 50dvw;
             margin: 3em;
+
+            @media (width < 768px) {
+                & {
+                    display: none;
+                }
+            }
         }
 
         .wrapper {
@@ -30,6 +37,15 @@
             background: #ffffff;
             padding: 34px;
             border-radius: 6px;
+
+            @media (width < 768px) {
+                & {
+                    max-width: none;
+                    width: calc(100dvw - 34px);
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
         }
 
         .wrapper h2 {
@@ -62,7 +78,6 @@
 
         form .policy {
             display: flex;
-            align-items: center;
         }
 
         form h3 {
