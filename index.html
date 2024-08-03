@@ -404,11 +404,6 @@
     }
 
     window.onload = () => {
-        const songs = ["./assets/audio/movie.mp3", "./assets/audio/audio.mp3"]
-        let num = songs[Math.round(Math.random() * (songs.length - 1))]
-        const sonido = cargarSonido(num)
-        sonido.volume = 0.1
-        sonido.play()
         setTimeout(() => {
             const loader = document.querySelector(".loader")
             loader.classList.add("loader-hide")
